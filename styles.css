@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+  --black: #000000;
+  --dark-red: #410000;
+  --light-red: #ff0000;
+  --white: #ffffff;
+  --neon-green: #04f338;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(to top, var(--black) 0%, var(--dark-red) 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h3 {
+  color: var(--white);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+  margin: 10px 0 26px 0;
+}
+
+input {
+  width: 300px;
+  height: 42px;
+  background: rgba(192, 192, 192, 0.205); /* Fundo moderno */
+  border: 1px solid var(--light-red);
+  border-radius: 8px; /* Bordas menos arredondadas */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--white);
+  margin: 0 0 20px 0;
+  transition: border-color 0.3s, background-color 0.3s;
+  backdrop-filter: blur(4px); /* Efeito de fundo desfocado */
+}
+
+input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+}
+
+button {
+  background-color: var(--light-red);
+  border: none;
+  color: var(--white);
+  padding: 12px 60px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 30px; /* Bordas arredondadas para um estilo moderno */
+  box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5); /* Sombra para destaque */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 30px;
+  background: linear-gradient(45deg, var(--light-red), var(--neon-green));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+button:hover {
+  background-color: var(--neon-green);
+  color: var(--white);
+  box-shadow: 0px 4px 15px rgba(4, 243, 56, 0.5); /* Sombra verde suave */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
